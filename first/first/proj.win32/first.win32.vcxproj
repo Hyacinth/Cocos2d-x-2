@@ -133,13 +133,20 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="GameControlMenu.h" />
+    <ClInclude Include="GameLayer.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SettingsLayer.h" />
+    <ClInclude Include="SysMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="GameControlMenu.cpp" />
+    <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SysMenu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -46,6 +46,18 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="SysMenu.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameControlMenu.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,6 +67,15 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="SysMenu.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="GameControlMenu.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
