@@ -146,6 +146,7 @@
     <ClCompile Include="GameControlMenu.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SettingsLayer.cpp" />
     <ClCompile Include="SysMenu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
