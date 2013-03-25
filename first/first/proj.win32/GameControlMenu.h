@@ -13,7 +13,7 @@ public:
 
 	void sysMenu(CCObject* pSender);
 
-	LAYER_NODE_FUNC(GameControlMenu);
+	CREATE_FUNC(GameControlMenu);
 };
 
 #endif

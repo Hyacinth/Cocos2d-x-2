@@ -11,7 +11,7 @@ public:
 
 	bool init(void);
 
-	LAYER_NODE_FUNC(GameLayer);
+	CREATE_FUNC(GameLayer);
 
 	virtual void ccTouchesEnded(cocos2d::CCSet* pTouches, cocos2d::CCEvent *pEvent);
 

@@ -11,9 +11,9 @@ public:
 
 	bool init(void);
 
-	BOID backCallback(CCObject* pSender);
+	void backCallback(CCObject* pSender);
 
-	LAYER_NODE_FUNC(SettingsLayer);
+	CREATE_FUNC(SettingsLayer);
 };
 
 #endif

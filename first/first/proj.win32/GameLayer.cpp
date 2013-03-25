@@ -72,7 +72,7 @@ bool GameLayer::init(void)
 		CCAnimation* animation = CCAnimation::animation();
 		CC_BREAK_IF(!animation);
 		animation->setName("flight");
-		animation->setDelay(0.2f);
+		animation->setDelayPerUnit(0.2f);
 		for (int i = 0; i < 3; ++i)
 		{
 			int x = i % 3;
@@ -99,7 +99,7 @@ void GameLayer::ccTouchesEnded(cocos2d::CCSet* pTouches, cocos2d::CCEvent *pEven
 {
 	CCTouch* touch = (CCTouch*)pTouches->anyObject();
 	// 获得触摸点坐标
-	CCPoint location = touch->locationInView(touch->getLocationInView());
+	CCPoint location = touch->locationInView();
 	CCPoint convertedLocation = CCDirector::sharedDirector()->convertToGL(location);
 	// 让飞船在1秒钟内移动过去
 	flight->runAction(CCMoveTo::actionWithDuration(1.0f, ccp(convertedLocation.x, convertedLocation.y)));

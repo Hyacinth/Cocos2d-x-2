@@ -17,7 +17,7 @@ public:
 	void onSettings(CCObject* pSender);
 	void onQuit(CCObject* pSender);
 
-	LAYER_NODE_FUNC(SysMenu);
+	CREATE_FUNC(SysMenu);
 };
 
 #endif

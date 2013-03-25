@@ -85,7 +85,35 @@ bool SettingsLayer::init(void)
 
 		CCMenuItemFont::setFontName("Marker Felt");
 		CCMenuItemFont::setFontSize(26);
+		CCLabelBMFont* label = CCLabelBMFont::labelWithString("Go back", "font01.fnt");
+		CC_BREAK_IF(!label);
+		CCMenuItemLabel* back = CCMenuItemLabel::itemWithLabel(label, this, menu_selector(SettingsLayer::backCallback));
+		CC_BREAK_IF(!back);
+		back.setScale(0.8f);
 
+		// 组合创建菜单层
+		CCMenu* menu = CCMenu::menuWithItems(title1, title2, item1, item2, title3, title4, item3, item4, back, NULL);
+		CC_BREAK_IF(!menu);
+		
+		// 设置多列的菜单项布局
+		menu->alignItemsInColumns(2, 2, 2, 2, 1, NULL);
+		this->addChild(menu);
+
+		// 手工微调一下最后一个菜单项的位置
+		cocos2d::CCPoint cp_back = back->getPosition();
+		cp_back.y -= 50.0f;
+		back->setPosition(cp_back);
+
+		bRet = true;
 
 	} while (false);
+
+	return bRet;
+}
+
+void SettingsLayer::backCallback(CCObject* pSender)
+{
+	CCScene* scene = CCScene::node();
+	scene->addChild(SysMenu::node());
+	CCDirector::sharedDirector()->replaceScene(CCTransitionShrinkGrow::transitionWithDuration(1.2f, scene));
 }

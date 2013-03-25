@@ -1,0 +1,154 @@
+﻿生成启动时间为 2013/3/25 11:18:24。
+     1>项目“D:\Github\Cocos2d-x\first\first\proj.win32\first.win32.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug.win32\first.win32.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I"D:\cocos2d-2.0-x-2.0.4\cocos2dx" /I"D:\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"D:\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"D:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"D:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"D:\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt GameLayer.cpp SettingsLayer.cpp SysMenu.cpp
+         SysMenu.cpp
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(26): warning C4996: 'cocos2d::CCSprite::spriteWithFile': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccsprite.h(180) : 参见“cocos2d::CCSprite::spriteWithFile”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(36): warning C4996: 'cocos2d::CCMenuItemFont::itemWithString': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(216) : 参见“cocos2d::CCMenuItemFont::itemWithString”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(39): warning C4996: 'cocos2d::CCMenuItemFont::itemWithString': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(212) : 参见“cocos2d::CCMenuItemFont::itemWithString”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(42): warning C4996: 'cocos2d::CCMenuItemFont::itemWithString': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(216) : 参见“cocos2d::CCMenuItemFont::itemWithString”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(45): warning C4996: 'cocos2d::CCMenuItemFont::itemWithString': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(212) : 参见“cocos2d::CCMenuItemFont::itemWithString”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(48): warning C4996: 'cocos2d::CCMenuItemFont::itemWithString': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenuitem.h(216) : 参见“cocos2d::CCMenuItemFont::itemWithString”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(52): warning C4996: 'cocos2d::CCMenu::menuWithItems': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\menu_nodes\ccmenu.h(80) : 参见“cocos2d::CCMenu::menuWithItems”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(71): warning C4996: 'cocos2d::CCScene::node': 被声明为已否决
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\layers_scenes_transitions_nodes\ccscene.h(55) : 参见“cocos2d::CCScene::node”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(74): error C2440: “初始化”: 无法从“cocos2d::CCLayer *”转换为“SysMenu *”
+                 从基类型到派生类型的强制转换需要 dynamic_cast 或 static_cast
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(101): error C2761: “void SysMenu::onQuit(cocos2d::CCObject *)”: 不允许成员函数重新声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\sysmenu.cpp(102): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+         SettingsLayer.cpp
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(4): error C2871: “coocs2d”: 具有该名称的命名空间不存在
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(24): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(24): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(25): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(25): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(27): error C2065: “CCMenuItemFont”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(27): error C2065: “title1”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(27): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(27): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(28): error C2065: “title1”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(29): error C2065: “title1”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(29): error C2227: “->setEnabled”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(32): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(32): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(33): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(33): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(36): error C2065: “CCMenuItemToggle”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(36): error C2065: “item1”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(36): error C2653: “CCMenuItemToggle”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(36): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(37): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(36): error C3861: “itemWithTarget”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(36): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(37): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(39): error C2065: “item1”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(42): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(42): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(43): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(43): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(44): error C2065: “CCMenuItemFont”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(44): error C2065: “title2”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(44): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(44): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(45): error C2065: “title2”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(46): error C2065: “title2”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(46): error C2227: “->setEnabled”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(49): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(49): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(50): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(50): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(51): error C2065: “CCMenuItemToggle”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(51): error C2065: “item2”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(51): error C2653: “CCMenuItemToggle”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(52): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(52): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(51): error C3861: “itemWithTarget”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(52): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(52): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(53): error C2065: “item2”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(55): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(55): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(56): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(56): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(57): error C2065: “CCMenuItemFont”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(57): error C2065: “title3”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(57): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(57): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(58): error C2065: “title3”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(59): error C2065: “title3”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(59): error C2227: “->setEnabled”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(61): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(61): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(62): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(62): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(63): error C2065: “CCMenuItemFont”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(63): error C2065: “item3”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(63): error C2653: “CCMenuItemToggle”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(64): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(64): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(63): error C3861: “itemWithTarget”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(64): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(64): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(65): error C2065: “item3”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(67): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(67): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(68): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(68): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(69): error C2065: “CCMenuItemFont”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(69): error C2065: “title4”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(69): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(69): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(70): error C2065: “title4”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(71): error C2065: “title4”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(71): error C2227: “->setEnabled”的左边必须指向类/结构/联合/泛型类型
+                 类型是“'unknown-type'”
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(74): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(74): error C3861: “setFontName”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(75): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(75): error C3861: “setFontSize”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(76): error C2065: “CCMenuItemToggle”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(76): error C2065: “item4”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(76): error C2653: “CCMenuItemToggle”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(77): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(76): error C3861: “itemWithTarget”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(77): error C3861: “itemWithString”: 找不到标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(78): error C2065: “item4”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(80): error C2065: “CCArray”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(80): error C2065: “CCMenuItem”: 未声明的标识符
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(80): error C2059: 语法错误:“>”
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(80): error C2039: “arrayWithObject”: 不是“`global namespace'”的成员
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(81): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(81): error C2653: “CCMenuItemFont”: 不是类或命名空间名称
+     1>d:\github\cocos2d-x\first\first\proj.win32\settingslayer.cpp(81): fatal error C1003: 错误计数超过 100；正在停止编译
+         GameLayer.cpp
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(8): error C2664: “cocos2d::CCTime::CCTime(const cocos2d::CCTime &)”: 不能将参数 1 从“float”转换为“const cocos2d::CCTime &”
+                 原因如下: 无法从“float”转换为“const cocos2d::CCTime”
+                 无构造函数可以接受源类型，或构造函数重载决策不明确
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(62): error C2440: “类型转换”: 无法从“void (__thiscall GameLayer::* )(cocos2d::CCTime)”转换为“cocos2d::SEL_SCHEDULE”
+                 指向成员的指针有不同的表示形式；无法在它们之间进行类型转换
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(74): error C2039: “setName”: 不是“cocos2d::CCAnimation”的成员
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccanimation.h(85) : 参见“cocos2d::CCAnimation”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(75): error C2039: “setDelay”: 不是“cocos2d::CCAnimation”的成员
+                 d:\cocos2d-2.0-x-2.0.4\cocos2dx\sprite_nodes\ccanimation.h(85) : 参见“cocos2d::CCAnimation”的声明
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(102): error C2660: “cocos2d::CCTouch::locationInView”: 函数不接受 1 个参数
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(110): error C2676: 二进制“+=”:“cocos2d::CCTime”不定义该运算符或到预定义运算符可接收的类型的转换
+     1>d:\github\cocos2d-x\first\first\proj.win32\gamelayer.cpp(112): error C2440: “类型转换”: 无法从“cocos2d::CCTime”转换为“int”
+                 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+         正在生成代码...
+     1>已完成生成项目“D:\Github\Cocos2d-x\first\first\proj.win32\first.win32.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:06.99
