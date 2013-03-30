@@ -1,6 +1,35 @@
 #include "HelloWorldScene.h"
+#include "GameOverLayer.h"
+#include "Monster.h"
+#include "LevelManager.h"
 
 using namespace cocos2d;
+
+
+HelloWorld::HelloWorld()
+{
+	_monsters = NULL;
+	_projectiles = NULL;
+
+	_monstersDestroyed = 0;
+
+	_player = NULL;
+	_nextProjectile = NULL;
+}
+
+HelloWorld::~HelloWorld()
+{
+	if (_monsters)
+	{
+		_monsters->release();
+		_monsters = NULL;
+	}
+	if (_projectiles)
+	{
+		_projectiles->release();
+		_projectiles = NULL;
+	}
+}
 
 CCScene* HelloWorld::scene()
 {
@@ -29,19 +58,28 @@ bool HelloWorld::init()
     bool bRet = false;
     do 
     {
-		CC_BREAK_IF(! CCLayerColor::initWithColor(ccc4(255, 255, 255, 255)));
+		this->_monsters = CCArray::create();
+		this->_monsters->retain();
+		this->_projectiles = CCArray::create();
+		this->_projectiles->retain();
+
+		CC_BREAK_IF(! CCLayerColor::initWithColor(LevelManager::sharedInstance()->curLevel()->getBackgroundColor()));
 
 		CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-		CCSprite* player = CCSprite::create("player.png", CCRectMake(0, 0, 27, 40));
-		CC_BREAK_IF(! player);
-		player->setPosition(ccp(player->getContentSize().width/2, winSize.height/2));
-		this->addChild(player);
+		_player = CCSprite::create("player2.png");
+		_player->setPosition(ccp(_player->getContentSize().width / 2, winSize.height / 2));
+		CC_BREAK_IF(! _player);
+		this->addChild(_player);
 
         bRet = true;
     } while (0);
 
 	// 添加定时器
-	this->schedule(schedule_selector(HelloWorld::gameLogic), 1.0);
+	this->schedule(schedule_selector(HelloWorld::gameLogic), LevelManager::sharedInstance()->curLevel()->getSecsPerSpawn());
+	this->schedule(schedule_selector(HelloWorld::update));
+
+	// 背景音乐
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background-music-aac.wav");
 
 	this->setTouchEnabled(true);
     return bRet;
@@ -55,7 +93,17 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 
 void HelloWorld::addMonster()
 {
-	CCSprite* monster = CCSprite::create("monster.png");
+	// CCSprite* monster = CCSprite::create("monster.png");
+	Monster* monster = NULL;
+	if (rand() % 2 == 0)
+	{
+		monster = WeakAndFastMonster::create();
+	}
+	else
+	{
+		monster = StrongAndSlowMonster::create();
+	}
+	
 	
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 	int minY = monster->getContentSize().height / 2;
@@ -66,20 +114,36 @@ void HelloWorld::addMonster()
 	monster->setPosition(ccp(winSize.width + monster->getContentSize().width / 2, actualY));
 	this->addChild(monster);
 
-	int minDuration = 2.0;
-	int maxDuration = 4.0;
+	int minDuration = monster->getMinMoveDuration();
+	int maxDuration = monster->getMaxMoveDuration();
 	int rangeDuration = maxDuration - minDuration;
 	int actualDuration = (rand() % rangeDuration) + minDuration;
 
 	CCMoveTo* actionMove = CCMoveTo::create(actualDuration, ccp(-monster->getContentSize().width / 2, actualY));
 	CCCallFuncN* actionMoveDone = CCCallFuncN::create(this, callfuncN_selector(HelloWorld::spriteMoveFinished));
 	monster->runAction(CCSequence::create(actionMove, actionMoveDone, NULL));
+
+	monster->setTag(1);
+	_monsters->addObject(monster);
 }
 
 void HelloWorld::spriteMoveFinished( CCNode* sender )
 {
 	CCSprite* sprite = (CCSprite*)sender;
 	this->removeChild(sprite, true);
+
+	if (sprite->getTag() == 1)
+	{
+		_monsters->removeObject(sprite);
+		// 有怪物跑到左边屏幕，则判定为玩家失败
+		CCScene* gameOverScene = GameOverLayer::sceneWithWon(false);
+		CCDirector::sharedDirector()->replaceScene(gameOverScene);
+	}
+	else if (sprite->getTag() == 2)
+	{
+		_projectiles->removeObject(sprite);
+	}
+	
 }
 
 void HelloWorld::gameLogic( float dt )
@@ -90,37 +154,127 @@ void HelloWorld::gameLogic( float dt )
 
 void HelloWorld::ccTouchesEnded( CCSet *pTouches, CCEvent *pEvent )
 {
+	if (_nextProjectile != NULL)
+	{
+		return;
+	}
+	
 	CCTouch* touch = (CCTouch*)pTouches->anyObject();
 	CCPoint location = this->convertTouchToNodeSpace(touch);
 
 	CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-	CCSprite* projectile = CCSprite::create("projectile.png");
-	projectile->setPosition(ccp(20, winSize.height/2));
+	_nextProjectile = CCSprite::create("projectile2.png");
+	_nextProjectile->retain();
+	_nextProjectile->setPosition(ccp(20, winSize.height/2));
 
-	CCPoint offset = ccpSub(location, projectile->getPosition());
+	CCPoint offset = ccpSub(location, _nextProjectile->getPosition());
 
 	if (offset.x <= 0)
 	{
 		return;
 	}
 
-	this->addChild(projectile);
-
-	int realX = winSize.width + projectile->getContentSize().width/2;
+	int realX = winSize.width + _nextProjectile->getContentSize().width/2;
 	float ratio = (float)offset.y / (float)offset.x;
-	int realY = realX * ratio + projectile->getPosition().y;
+	int realY = realX * ratio + _nextProjectile->getPosition().y;
 	CCPoint realDest = ccp(realX, realY);
 
-	int offRealX = realX - projectile->getPosition().x;
-	int offRealY = realY - projectile->getPosition().y;
+	int offRealX = realX - _nextProjectile->getPosition().x;
+	int offRealY = realY - _nextProjectile->getPosition().y;
 	float length = sqrtf(offRealX * offRealX + offRealY * offRealY);
 	float velocity = 480 / 1;
 	float realMoveDuration = length / velocity;
 
-	projectile->runAction(CCSequence::create(CCMoveTo::create(realMoveDuration, realDest), 
-		CCCallFuncN::create(this, callfuncN_selector(HelloWorld::spriteMoveFinished)), NULL));
+	// 计算角度
+	float angleRadians = atanf((float)offRealY / (float)offRealX);
+	float angleDegrees = CC_RADIANS_TO_DEGREES(angleRadians);
+	float cocosAngle = -1 * angleDegrees;
+	float rotateDegreesPerSecond = 180 / 0.5;
+	float degreesDiff = _player->getRotation() - cocosAngle;
+	float rotateDuration = fabs(degreesDiff / rotateDegreesPerSecond);
 
+	_player->runAction(CCSequence::create(CCRotateTo::create(rotateDuration, cocosAngle), 
+		CCCallFunc::create(this, callfunc_selector(HelloWorld::finishShoot)), NULL));
+
+	_nextProjectile->runAction(CCSequence::create(CCMoveTo::create(realMoveDuration, realDest), 
+		CCCallFuncN::create(this, callfuncN_selector(HelloWorld::spriteMoveFinished)), NULL));
+	
+	_nextProjectile->setTag(2);
+
+	// 音乐
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("pew-pew-lei.wav");
 }
+
+void HelloWorld::update( float dt )
+{
+	CCArray* projectilesToDelete = CCArray::create();
+	
+	CCObject* pObject = NULL;
+	CCObject* pObject2 = NULL;
+
+	CCARRAY_FOREACH(_projectiles, pObject)
+	{
+		CCSprite* projectile = (CCSprite*)pObject;
+
+		bool monsterHit = false;
+		CCArray* monstersToDelete = CCArray::create();
+
+		CCARRAY_FOREACH(_monsters, pObject2)
+		{
+			Monster* monster = (Monster*)pObject2;
+			if (CCRect::CCRectIntersectsRect(projectile->boundingBox(), monster->boundingBox()))
+			{
+				monsterHit = true;
+				monster->setHp(monster->getHp() - 1);
+				if (monster->getHp() <= 0)
+				{
+					monstersToDelete->addObject(monster);
+				}
+				break;
+			}
+		}
+
+		CCARRAY_FOREACH(monstersToDelete, pObject2)
+		{
+			CCSprite* monster = (CCSprite*)pObject2;
+			_monsters->removeObject(monster);
+			this->removeChild(monster, true);
+			// 计算消灭怪物总数，判断胜利条件
+			_monstersDestroyed++;
+			if (_monstersDestroyed > 10)
+			{
+				CCScene* gameOverScene = GameOverLayer::sceneWithWon(true);
+				CCDirector::sharedDirector()->replaceScene(gameOverScene);
+			}
+		}
+
+		if (monsterHit)
+		{
+			projectilesToDelete->addObject(projectile);
+			CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("explosion.wav");
+		}
+		
+	}
+
+	CCARRAY_FOREACH(projectilesToDelete, pObject)
+	{
+		CCSprite* projectile = (CCSprite*)pObject;
+		_projectiles->removeObject(projectile);
+		this->removeChild(projectile, true);
+	}
+
+	projectilesToDelete->release();
+}
+
+void HelloWorld::finishShoot()
+{
+	this->addChild(_nextProjectile);
+	_projectiles->addObject(_nextProjectile);
+
+	_nextProjectile->release();
+	_nextProjectile = NULL;
+}
+
 
 
 

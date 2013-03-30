@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="resource">
+      <UniqueIdentifier>{d1bd544d-3909-4b85-ada8-c31d4375b729}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+    <Filter Include="class">
+      <UniqueIdentifier>{fc450e42-2e01-45c4-a2e0-4f25249c92ba}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PompaDroid.ico">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PompaDroid.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLayer.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="HudLayer.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionSprite.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>class</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLayer.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="HudLayer.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionSprite.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

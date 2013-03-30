@@ -3,6 +3,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
+#include "LevelManager.h"
 
 using namespace CocosDenshion;
 
@@ -14,6 +15,7 @@ AppDelegate::AppDelegate()
 
 AppDelegate::~AppDelegate()
 {
+	LevelManager::sharedInstance()->end();
     SimpleAudioEngine::end();
 }
 
