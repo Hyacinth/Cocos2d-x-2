@@ -136,17 +136,21 @@
     <ClInclude Include="Defines.h" />
     <ClInclude Include="GameLayer.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Hero.h" />
     <ClInclude Include="HudLayer.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SimpleDPad.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="ActionSprite.cpp" />
     <ClCompile Include="GameLayer.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Hero.cpp" />
     <ClCompile Include="HudLayer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimpleDPad.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

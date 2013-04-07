@@ -1,5 +1,5 @@
 #include "GameScene.h"
-
+using namespace cocos2d;
 
 GameScene::GameScene(void)
 {
@@ -23,6 +23,8 @@ bool GameScene::init()
 		this->addChild(_gameLayer, 0);
 		_hudLayer = HudLayer::create();
 		this->addChild(_hudLayer, 1);
+		_hudLayer->getDPad()->setDelegate(_gameLayer);
+		_gameLayer->setHud(_hudLayer);
 
 		bRet = true;
 	} while (0);

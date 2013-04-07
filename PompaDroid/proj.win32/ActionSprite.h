@@ -1,5 +1,6 @@
 #pragma once
 #include "cocos2d.h"
+#include "Defines.h"
 class ActionSprite :
 	public cocos2d::CCSprite
 {
@@ -9,13 +10,13 @@ public:
 
 	// action methods
 	void idle();
-	void attack();
-	void hurtWithDamage(float damage);
-	void knockout();
-	void walkWithDirection(cocos2d::CCPoint direction);
-
-	// scheduled methods
-	void update(float dt);
+ 	void attack();
+// 	void hurtWithDamage(float damage);
+// 	void knockout();
+ 	void walkWithDirection(cocos2d::CCPoint direction);
+// 
+ 	// scheduled methods
+ 	void update(float dt);
 
 	// actions
 	CC_SYNTHESIZE_RETAIN(cocos2d::CCAction*, _idleAction, IdleAction);

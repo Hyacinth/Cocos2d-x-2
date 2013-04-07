@@ -54,6 +54,12 @@
     <ClInclude Include="Defines.h">
       <Filter>class</Filter>
     </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>class</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleDPad.h">
+      <Filter>class</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -72,6 +78,12 @@
       <Filter>class</Filter>
     </ClCompile>
     <ClCompile Include="ActionSprite.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>class</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleDPad.cpp">
       <Filter>class</Filter>
     </ClCompile>
   </ItemGroup>
